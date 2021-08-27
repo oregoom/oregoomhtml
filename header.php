@@ -126,12 +126,12 @@
         <amp-analytics type="gtag" data-credentials="include">
             <script type="application/json">
                 {
-                  "vars" : {
+                    "vars" : {
                     "gtag_id": "<?php echo get_option('template_oregoom_google_analytics'); ?>",
                     "config" : {
-                      "<?php echo get_option('template_oregoom_google_analytics'); ?>": { "groups": "default" }
+                        "<?php echo get_option('template_oregoom_google_analytics'); ?>": { "groups": "default" }
+                        }
                     }
-                  }
                 }
             </script>
         </amp-analytics>
@@ -160,7 +160,7 @@
                 } ?>
 
             <button class="navbar-toggler" type="button" aria-label="open sidebar" on="tap:sidebar-top.open" tabindex="0">
-              <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
             </button>
 
 
@@ -171,7 +171,7 @@
 
 
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse ms-3" id="navbarSupportedContent">
 
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
@@ -180,8 +180,8 @@
                 </ul>
 
                 <div class="d-flex">
-                    <a class="btn btn-outline-primary me-2 d-none d-xl-block" href="#" role="button">Precios y planes</a>
-                    <a class="btn btn btn-primary" href="#" role="button">Cursos</a>
+                    <a class="btn btn-outline-primary me-2 d-none d-xl-block" href="https://oregoom.com/precios/" target="_self" role="button">Precios y planes</a>
+                    <a class="btn btn btn-primary" href="https://oregoom.com/cursos/" target="_self" role="button">Cursos</a>
                 </div>
 
             </div>
@@ -214,10 +214,10 @@
                         <?php oregoom_navegation_menus(); ?>
 
                         <li class="nav-item mb-2 mt-2">
-                          <a class="btn btn-outline-primary" href="#" role="button">Precios y planes</a>
+                            <a class="btn btn-outline-primary" href="https://oregoom.com/precios/" target="_self" role="button">Precios y planes</a>
                         </li>
                         <li class="nav-item">
-                          <a class="btn btn btn-primary" href="#" role="button">Cursos</a>
+                            <a class="btn btn btn-primary" href="https://oregoom.com/cursos/" target="_self" role="button">Cursos</a>
                         </li>
 
                     </ul>
