@@ -246,7 +246,7 @@
 
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                          <?php
+                            <?php
 
                             $ID_post = get_the_ID();
 

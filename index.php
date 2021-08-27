@@ -158,6 +158,17 @@ if(have_posts()){
 
                 <h1 class="text-center h1" style="font-weight: bold;"><?php the_title(); ?></h1>
 
+
+                <!--//GOOGLE ADSENSE (PC) -->
+                <?php if(get_option('template_oregoom_adsense_300_250') != ''){ ?>
+                    <div class="pb-3 text-center d-lg-none">
+
+                        <?php  echo get_option('template_oregoom_adsense_300_250'); ?>
+
+                    </div>
+                <?php } ?>
+
+
                 <?php
 
                 if (!isset($_GET['v'])) {
@@ -166,7 +177,7 @@ if(have_posts()){
 
                     $ID_YouTube_post = get_post_meta(get_the_ID(), 'hb_idyoutube_post', true); ?>
 
-                    <div class="d-grid gap-2 col-6 mx-auto mt-4">
+                    <div class="d-grid gap-2 col-md-6 mx-auto mt-4">
                         <a href="<?php echo get_the_permalink()."?v=$ID_YouTube_post"; ?>" class="btn btn-primary" type="button">Ver video tutorial</a>
                     </div>
 
@@ -175,7 +186,9 @@ if(have_posts()){
                 <?php } ?>
 
                 <div class="pt-4 pb-4">
+
                     <?php the_content(); ?>
+
                 </div>
 
             </div>
