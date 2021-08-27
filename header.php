@@ -150,7 +150,7 @@
 
     <header class="sticky-lg-top">
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
         <div class="container"><?php
 
                 if ( has_custom_logo() ) {
@@ -181,7 +181,7 @@
 
                 <div class="d-flex">
                     <a class="btn btn-outline-primary me-2 d-none d-xl-block" href="https://oregoom.com/precios/" target="_self" role="button">Precios y planes</a>
-                    <a class="btn btn btn-primary" href="https://oregoom.com/cursos/" target="_self" role="button">Cursos</a>
+                    <a class="btn btn btn-primary" href="https://oregoom.com/cursos/" target="_blank" role="button">Cursos</a>
                 </div>
 
             </div>
@@ -217,7 +217,7 @@
                             <a class="btn btn-outline-primary" href="https://oregoom.com/precios/" target="_self" role="button">Precios y planes</a>
                         </li>
                         <li class="nav-item">
-                            <a class="btn btn btn-primary" href="https://oregoom.com/cursos/" target="_self" role="button">Cursos</a>
+                            <a class="btn btn btn-primary" href="https://oregoom.com/cursos/" target="_blank" role="button">Cursos</a>
                         </li>
 
                     </ul>
