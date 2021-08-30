@@ -301,7 +301,7 @@ if (!isset($_GET['v'])) {
     /*GOOGLE ADSENSE (PC) en Header */
     if(get_option('template_oregoom_adsense_728_90') != ''){ ?>
 
-        <div class="pt-3 pb-3 text-center d-none d-lg-block bg-light">
+        <div class="pt-3 pb-3 text-center d-none d-lg-block">
 
             <?php  echo get_option('template_oregoom_adsense_728_90'); ?>
 
