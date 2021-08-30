@@ -60,7 +60,7 @@ if(have_posts()){
 
         </div>
 
-        <div class="bg-dark sticky-top d-sm-none">
+        <div class="bg-dark sticky-top d-sm-none" style="z-index: 1;">
             <div class="container-lg container-fluid pl-lg-5 pr-lg-5 pt-lg-3 pb-lg-3 p-0">
                 <amp-youtube
                 data-videoid="<?php echo $ID_YouTube; ?>"
