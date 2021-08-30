@@ -110,7 +110,7 @@ if(have_posts()){
                     </div>
 
                     <!--<div class="list-group list-group-flush">-->
-                    <div class="nav flex-column">
+                    <div class="nav flex-column pb-4">
 
                         <?php
 
@@ -199,7 +199,7 @@ if(have_posts()){
         <div class="col col-3 d-none d-xxl-block">
 
 
-            <!--//GOOGLE ADSENSE (PC) -->
+            <!--//Ads Curso de Udemy (PC y Movil) -->
             <?php if(get_option('template_oregoom_curso_udemy') != ''){ ?>
                 <div class="pb-3 text-center sticky-top"  style="position: -webkit-sticky; position: sticky; overflow: auto; top: 116px; height: 100vh; max-height: calc(100vh - 116px); z-index: 12;">
 

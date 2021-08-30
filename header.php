@@ -117,7 +117,7 @@
      * Google Ananalytics
      */
     if(is_user_logged_in() != true && get_option('template_oregoom_google_analytics') != ""){ ?>
-    
+
         <amp-analytics type="gtag" data-credentials="include">
             <script type="application/json">
                 {
@@ -182,7 +182,7 @@
 
             </div>
 
-
+            <!--Menú Movil-->
             <amp-sidebar id="sidebar-top" class="bg-white" layout="nodisplay" side="right">
 
                 <div class="p-2 pe-3 border-bottom d-flex justify-content-between align-items-center">
@@ -220,24 +220,26 @@
             </amp-sidebar>
 
 
-
+            <!--Contenidos en Movil-->
             <amp-lightbox id="quote-lb" layout="nodisplay" class="bg-white" scrollable>
 
-                <!--Botón de Close menú-->
+                <!--Botón de Close Contenidos-->
                 <span class="rounded-circle me-4" id="btn-sidebarclose" on="tap:quote-lb.close" style="position: fixed; top: 12px; right: 0px; z-index: 1000; box-shadow: rgba(0, 0, 0, 0.50) 0px 0px 10px;">X</span>
             
                 <div class="shadow-sm text-center pt-3 pb-3 mb-3 sticky-top bg-white" style="z-index: 1;">
                     <span class="h5"><strong>Contenido</strong></span>
                 </div>
 
-                <!--//GOOGLE ADSENSE (PC) -->
-                <?php if(get_option('template_oregoom_adsense_300_250') != ''){ ?>
+
+                <!--//Ads Curso de Udemy (PC y Movil) -->
+                <?php if(get_option('template_oregoom_curso_udemy') != ''){ ?>
                     <div class="pb-3 text-center">
 
-                        <?php  echo get_option('template_oregoom_adsense_300_250'); ?>
+                        <?php  echo get_option('template_oregoom_curso_udemy'); ?>
 
                     </div>
                 <?php } ?>
+
 
                 <div class="container" style="z-index: 1;">
 
@@ -299,7 +301,7 @@ if (!isset($_GET['v'])) {
     /*GOOGLE ADSENSE (PC) en Header */
     if(get_option('template_oregoom_adsense_728_90') != ''){ ?>
 
-        <div class="pt-3 pb-3 text-center d-none d-lg-block">
+        <div class="pt-3 pb-3 text-center d-none d-lg-block bg-light">
 
             <?php  echo get_option('template_oregoom_adsense_728_90'); ?>
 
