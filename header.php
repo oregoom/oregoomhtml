@@ -42,12 +42,7 @@
             border: none;
             cursor: pointer;
             padding: 3px 10px 3px 10px;
-            border-radius: 100px;
             color: #fff;
-            position: absolute;
-            top: 0; margin-top: 10px;
-            right: 0;
-            margin-right: 10px;
         }
         .hb-parrafo
         {
@@ -159,7 +154,7 @@
                     echo get_bloginfo();
                 } ?>
 
-            <button class="navbar-toggler" type="button" aria-label="open sidebar" on="tap:sidebar-top.open" tabindex="0">
+            <button class="navbar-toggler border-0" type="button" aria-label="open sidebar" on="tap:sidebar-top.open" tabindex="0">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -189,9 +184,9 @@
 
             <amp-sidebar id="sidebar-top" class="bg-white" layout="nodisplay" side="right">
 
-                <ul class="list-group border-bottom rounded-0">
-
-                    <li class="border-0 list-group-item d-flex justify-content-between align-items-center"><?php
+                <div class="p-2 pe-3 border-bottom d-flex justify-content-between align-items-center">
+                        
+                        <?php
 
                         if ( has_custom_logo() ) {
                             the_custom_logo();
@@ -200,12 +195,9 @@
                         } ?>
 
                         <!--Botón de Close menú-->
-                        <span id="btn-sidebarclose" on="tap:sidebar-top.close" >X</span>
+                        <span class="rounded-circle ms-3" id="btn-sidebarclose" on="tap:sidebar-top.close" >X</span>
 
-                    </li>
-
-                </ul>
-
+                </div>
 
                 <div class="navbar-collapse pt-3 p-3">
 

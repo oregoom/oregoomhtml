@@ -156,10 +156,10 @@ function oregoom_navegation_menus(){
 
             if($oregoomMenu->menu_item_parent == 0){
                 ?>
-                <li class="nav-item active dropdown mr-3">
+                <li class="nav-item active dropdown">
                     <?php
 
-                    $menuPrincipal = '<a class="nav-link" href="'.esc_url($oregoomMenu->url).'" target="'.$oregoomMenu->target.'">'.$oregoomMenu->title.'</a>';
+                    $menuPrincipal = '<a class="nav-link" href="'.esc_url($oregoomMenu->url).'" target="'.$oregoomMenu->target.'"><small>'.$oregoomMenu->title.'</small></a>';
 
                     foreach ($oregoomMenus as $oregoomSubMenu) {
                         if($idMenu == $oregoomSubMenu->menu_item_parent){

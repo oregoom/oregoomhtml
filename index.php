@@ -159,9 +159,9 @@ if(have_posts()){
                 <h1 class="text-center h1" style="font-weight: bold;"><?php the_title(); ?></h1>
 
 
-                <!--//GOOGLE ADSENSE (PC) -->
+                <!--//GOOGLE ADSENSE (Movil) -->
                 <?php if(get_option('template_oregoom_adsense_300_250') != ''){ ?>
-                    <div class="pb-3 text-center d-lg-none">
+                    <div class="pb-2 text-center d-lg-none">
 
                         <?php  echo get_option('template_oregoom_adsense_300_250'); ?>
 
@@ -213,6 +213,8 @@ if(have_posts()){
     </div>
 
 </main>
+
+
 
 <div class="container mt-4 mb-5">
 
