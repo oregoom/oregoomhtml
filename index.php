@@ -12,6 +12,7 @@ if(have_posts()){
         $ID_YouTube = $_GET['v']; ?>
 
         <div class="bg-dark d-none d-sm-block">
+
             <div class="container pt-2 pb-4">
                 <div class="row">
 
@@ -154,9 +155,9 @@ if(have_posts()){
 
         <article class="col">
 
-            <div class="container" style="max-width: 760px; margin-left: auto; margin-right: auto;">
+            <div style="max-width: 700px; margin-left: auto; margin-right: auto;">
 
-                <h1 class="text-center h1" style="font-weight: bold;"><?php the_title(); ?></h1>
+                <h1 class="text-center h1 mb-3" style="font-weight: bold;"><?php the_title(); ?></h1>
 
 
                 <!--//GOOGLE ADSENSE (Movil) -->

@@ -146,6 +146,7 @@
     <header class="sticky-lg-top">
 
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+
         <div class="container"><?php
 
                 if ( has_custom_logo() ) {
@@ -154,13 +155,13 @@
                     echo get_bloginfo();
                 } ?>
 
+            <!--Boton de Menú (Movil)-->
             <button class="navbar-toggler border-0" type="button" aria-label="open sidebar" on="tap:sidebar-top.open" tabindex="0">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-
-            <!--Menú movil de contenido-->
-            <div class="navbar-toggler rounded-circle p-3 mb-5 me-4 bg-white border-0" style="position: fixed; bottom: 0px; right: 0px; z-index: 1000; box-shadow: rgba(0, 0, 0, 0.50) 0px 5px 10px;" role="button" aria-label="open sidebar" on="tap:sidebar-two.open" tabindex="0">
+            <!--Boton de Contenido (Movil)-->
+            <div class="navbar-toggler rounded-circle p-3 mb-5 me-4 bg-white border-0" style="position: fixed; bottom: 0px; right: 0px; z-index: 1000; box-shadow: rgba(0, 0, 0, 0.50) 0px 5px 10px;" role="button" aria-label="open sidebar" on="tap:quote-lb" tabindex="0">
                 <span class="navbar-toggler-icon"></span>
             </div>
 
@@ -218,27 +219,29 @@
 
             </amp-sidebar>
 
-            <amp-sidebar id="sidebar-two" class="bg-white" layout="nodisplay" side="left">
-
-                <ul class="list-group border-bottom rounded-0">
-
-                    <li class="border-0 list-group-item d-flex justify-content-between align-items-center">
-
-                        <span class="h5"><strong>Contenido</strong></span>
-
-                        <!--Botón de Close menú-->
-                        <span id="btn-sidebarclose" on="tap:sidebar-two.close" >X</span>
-
-                    </li>
-
-                </ul>
 
 
-                <div class="navbar-collapse pt-3 p-3">
+            <amp-lightbox id="quote-lb" layout="nodisplay" class="bg-white" scrollable>
 
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <?php
+                <!--Botón de Close menú-->
+                <span class="rounded-circle mb-5 me-4" id="btn-sidebarclose" on="tap:quote-lb.close" style="position: fixed; bottom: 0px; right: 0px; z-index: 1000; box-shadow: rgba(0, 0, 0, 0.50) 0px 5px 10px;">X</span>
+            
+                <div class="shadow-sm text-center pt-3 pb-3 mb-3 sticky-top bg-white" style="z-index: 1;">
+                    <span class="h5"><strong>Contenido</strong></span>
+                </div>
+
+                <!--//GOOGLE ADSENSE (PC) -->
+                <?php if(get_option('template_oregoom_adsense_300_250') != ''){ ?>
+                    <div class="pb-3 text-center">
+
+                        <?php  echo get_option('template_oregoom_adsense_300_250'); ?>
+
+                    </div>
+                <?php } ?>
+
+                <div class="container" style="z-index: 1;">
+
+                    <div class="list-group list-group-flush text-center me-4 ms-4 pb-5"><?php
 
                             $ID_post = get_the_ID();
 
@@ -257,24 +260,33 @@
 
                                     $oregoom_title_corto_post = get_post_meta(get_the_ID(), 'oregoom_title_corto_post', true); ?>
 
-                                    <a class="nav-link text-dark <?php if($ID_post == get_the_ID()){ echo "list-group-item-primary"; } ?>" target="_self" href="<?php the_permalink(); ?>"><?php echo $oregoom_title_corto_post; ?></a> <?php
+                                    <a class="list-group-item <?php if($ID_post == get_the_ID()){ echo "list-group-item-primary"; } ?>" target="_self" href="<?php the_permalink(); ?>"><?php echo $oregoom_title_corto_post; ?></a> <?php
 
                                 } else { ?>
 
-                                    <a class="nav-link text-dark <?php if($ID_post == get_the_ID()){ echo "list-group-item-primary"; } ?>" target="_self" href="<?php the_permalink(); ?>"><?php the_title(); ?></a> <?php
+                                    <a class="list-group-item <?php if($ID_post == get_the_ID()){ echo "list-group-item-primary"; } ?>" target="_self" href="<?php the_permalink(); ?>"><?php the_title(); ?></a> <?php
 
                                 }
 
                             endwhile;
 
                             wp_reset_postdata(); ?>
-                        </li>
 
-                    </ul>
+                    </div>
 
                 </div>
 
-            </amp-sidebar>
+                <!--//GOOGLE ADSENSE (PC) -->
+                <?php if(get_option('template_oregoom_adsense_300_600') != ''){ ?>
+                    <div class="pb-3 text-center">
+
+                        <?php  echo get_option('template_oregoom_adsense_300_600'); ?>
+
+                    </div>
+                <?php } ?>
+                
+
+            </amp-lightbox>
 
 
         </div>
