@@ -224,7 +224,7 @@
             <amp-lightbox id="quote-lb" layout="nodisplay" class="bg-white" scrollable>
 
                 <!--Botón de Close menú-->
-                <span class="rounded-circle mb-5 me-4" id="btn-sidebarclose" on="tap:quote-lb.close" style="position: fixed; bottom: 0px; right: 0px; z-index: 1000; box-shadow: rgba(0, 0, 0, 0.50) 0px 5px 10px;">X</span>
+                <span class="rounded-circle me-4" id="btn-sidebarclose" on="tap:quote-lb.close" style="position: fixed; top: 12px; right: 0px; z-index: 1000; box-shadow: rgba(0, 0, 0, 0.50) 0px 0px 10px;">X</span>
             
                 <div class="shadow-sm text-center pt-3 pb-3 mb-3 sticky-top bg-white" style="z-index: 1;">
                     <span class="h5"><strong>Contenido</strong></span>
