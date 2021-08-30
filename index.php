@@ -13,7 +13,7 @@ if(have_posts()){
 
         <div class="bg-dark d-none d-sm-block">
 
-            <div class="container pt-2 pb-4">
+            <div class="container pt-3 pb-4">
                 <div class="row">
 
                     <div class="col">

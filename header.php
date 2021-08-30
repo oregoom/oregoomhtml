@@ -117,7 +117,7 @@
      * Google Ananalytics
      */
     if(is_user_logged_in() != true && get_option('template_oregoom_google_analytics') != ""){ ?>
-        <!--<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>-->
+    
         <amp-analytics type="gtag" data-credentials="include">
             <script type="application/json">
                 {
@@ -292,118 +292,19 @@
         </div>
     </nav>
 
-</header>
+</header><?php
 
-    <!--//GOOGLE ADSENSE (PC) -->
-    <?php if(get_option('template_oregoom_adsense_728_90') != ''){ ?>
+if (!isset($_GET['v'])) {
+
+    /*GOOGLE ADSENSE (PC) en Header */
+    if(get_option('template_oregoom_adsense_728_90') != ''){ ?>
+
         <div class="pt-3 pb-3 text-center d-none d-lg-block">
 
             <?php  echo get_option('template_oregoom_adsense_728_90'); ?>
 
-        </div>
-    <?php } ?>
+        </div><?php 
+    
+    } 
 
-
-
-
-
-<!--        <header class="sticky-lg-top">
-            <nav class="navbar navbar-expand-lg navbar-light bg-dark shadow-sm">
-                <div class="container pt-1 pb-1">
-                    <div class="navbar-nav me-auto text-light"><?php
-
-                        if ( has_custom_logo() ) {
-                            the_custom_logo();
-                        } else {
-                            echo get_bloginfo();
-                        } ?>
-
-                    </div>
-
-                    Menú movil
-                    <div class="navbar-toggler rounded-circle p-3 mb-5 me-4 bg-white border-0" style="position: fixed; bottom: 0px; right: 0px; z-index: 1000; box-shadow: rgba(0, 0, 0, 0.50) 0px 5px 10px;" role="button" aria-label="open sidebar" on="tap:sidebar.open" tabindex="0">
-                        <span class="navbar-toggler-icon"></span>
-                    </div>
-
-
-                    <div class="me-0 navbar-nav my my-lg-0 navbar-nav-scroll">
-
-                        <div class="collapse navbar-collapse">
-
-                            <ul class="navbar-nav my my-lg-0 navbar-nav-scroll">
-
-                                <?php oregoom_navegation_menus(); ?>
-
-                            </ul>
-                        </div>
-
-                    </div>
-
-                    <amp-sidebar id="sidebar" class="bg-white" layout="nodisplay" side="right">
-
-                        <ul class="list-group border-bottom rounded-0">
-
-                            <li class="border-0 list-group-item d-flex justify-content-between align-items-center"><?php
-
-                                if ( has_custom_logo() ) {
-                                    the_custom_logo();
-                                } else {
-                                    echo get_bloginfo();
-                                } ?>
-
-                                Botón de Close menú
-                                <span id="btn-sidebarclose" on="tap:sidebar.close" >X</span>
-
-                            </li>
-
-                        </ul>
-
-
-                        <div class="navbar-collapse pt-3 p-3">
-
-                            <ul class="navbar-nav">
-
-                                <?php oregoom_navegation_menus(); ?>
-
-
-                            </ul>
-
-                        </div>
-
-                    </amp-sidebar>
-
-                </div>
-            </nav>
-
-
-
-
-
-
-            Buscar en pantalla completa Movil
-            <amp-lightbox id="my-search" layout="nodisplay">
-                <div class="lightbox shadow pb-2 pt-2" tabindex="0" style="z-index: 1001;">
-
-                     Vídeo de YouTube
-                    <div class="container">
-
-                        <div class="overflow-hidden">
-                            <span role="button" class="text-light h2 float-right text-dark" on="tap:my-search.close">&times;</span>
-                        </div>
-
-                        <div class="text-center mb-2"><?php
-                            if ( has_custom_logo() ) {
-                                the_custom_logo();
-                            } else {
-                                echo get_bloginfo();
-                            } ?>
-                        </div>
-
-                        <?php get_search_form(); ?>
-
-                    </div>
-
-                </div>
-            </amp-lightbox>
-
-        </header>-->
+} ?>
