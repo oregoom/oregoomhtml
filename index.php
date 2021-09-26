@@ -24,13 +24,22 @@ if(have_posts()){
                         height="270"
                         ></amp-youtube>
                     </div>
-                    <div class="col col-3 d-none d-lg-block">
+                    <div class="col col-xxl-3 col-xl-4 col-lg-4 d-none d-lg-block">
 
                         <!--//GOOGLE ADSENSE (PC) -->
                         <?php if(get_option('template_oregoom_adsense_300_250') != ''){ ?>
-                            <div class="pb-3 text-center d-none d-xxl-block">
+                            <!--<div class="pb-3 text-center d-none d-xxl-block">
 
                                 <?php  echo get_option('template_oregoom_adsense_300_250'); ?>
+
+                            </div>-->
+                        <?php } ?>
+
+                        <!--//Ads Curso de Udemy (PC y Movil) -->
+                        <?php if(get_option('template_oregoom_curso_udemy') != ''){ ?>
+                            <div class="pb-3 text-center d-none d-lg-block">
+
+                                <?php  echo get_option('template_oregoom_curso_udemy'); ?>
 
                             </div>
                         <?php } ?>
