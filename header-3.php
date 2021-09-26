@@ -103,6 +103,41 @@
                 border-radius: .0rem !important;*/
             }
 
+
+        }
+
+        /* Large devices (desktops, 992px and up)*/
+        @media (min-width: 992px) {
+
+            #oregoom-1140-width{
+                padding: 0 60px 0 60px;
+            }
+
+            #oregoom-992-width{
+                width: 260px;
+            }
+
+            #oregoom-992-width-2{
+                margin-left: 260px;
+            }
+
+            #container-article{
+                box-shadow: 0 1rem 3rem rgba(0,0,0,.175);
+            }
+
+        }
+
+        @media (min-width: 1200px) {
+
+            #oregoom-1140-width{
+                /*width: 1140px !important;*/
+                padding: 0 100px 0 100px;
+            }
+
+            #container-article{
+                box-shadow: 0 1rem 3rem rgba(0,0,0,.175);
+            }
+
         }
 
 
@@ -134,7 +169,7 @@
 
 
 </head>
-<body <?php body_class(); ?>>
+<body <?php body_class('bg-light'); ?>>
 
 
     <!--//GOOGLE ADSENSE Google AMP (Auto) -->
@@ -143,7 +178,90 @@
     <?php } ?>
 
 
-    <header class="sticky-lg-top">
+    <div class="overflow-hidden h-100 w-100">
+
+        <div style="" id="oregoom-992-width" class="position-fixed bottom-0 top-0 pe-1 bg-dark d-none d-lg-block"><!--LEFT-->
+
+            <div style="position: -webkit-sticky; position: sticky; top: 0; z-index: 12;" class="pb-3 pt-3 bg-dark">
+
+                <div class="text-center">
+                        <span class="h5 text-white"><strong>Contenido</strong></span>
+                </div>  
+
+            </div>
+    
+            <nav style="position: -webkit-sticky; position: sticky; overflow: auto; height: 100vh; max-height: calc(100vh - 58px)">
+
+                <style>
+
+                    #ul-scrollbar::-webkit-scrollbar{
+                        width: 6px;
+                        height: 6px;
+                    }
+                    #ul-scrollbar::-webkit-scrollbar-corner{
+                        background-color: transparent;
+                    }
+                    #ul-scrollbar::-webkit-scrollbar-thumb{
+                        border-radius: 3px;
+                        background-color: #91979d;
+                    }
+
+                </style>
+
+                <ul style="overflow: auto; max-height: 100%; margin: 0; padding: 0;" id="ul-scrollbar">
+
+                    <!--<div class="list-group list-group-flush">-->
+                    <div class="nav flex-column pb-4 ps-3">
+
+                        <?php
+
+                        $ID_post = get_the_ID();
+
+                        //Consulta que pertenece a una categoria específica
+                        $wordpress_query = new WP_Query( array(
+                                'post_type' => 'post',
+                                'orderby' => 'DESC',
+                                'post_status' => 'publish',
+                                'posts_per_page' => -1
+                            ));
+
+                        while ($wordpress_query->have_posts()) : $wordpress_query->the_post();
+
+                            // Título corto
+                            if(get_post_meta(get_the_ID(), 'oregoom_title_corto_post', true)){
+
+                                $oregoom_title_corto_post = get_post_meta(get_the_ID(), 'oregoom_title_corto_post', true); ?>
+
+                                <!--<a class="list-group-item list-group-item-action <?php if($ID_post == get_the_ID()){ echo "list-group-item-secondary"; } ?>" target="_self" href="<?php the_permalink(); ?>"><?php echo $oregoom_title_corto_post; ?></a>-->
+                                <a class="nav-link <?php if($ID_post == get_the_ID()){ echo "bg-primary text-white"; } else { echo "text-white-50"; } ?>" target="_self" href="<?php the_permalink(); ?>"><?php echo $oregoom_title_corto_post; ?></a> <?php
+
+                            } else { ?>
+
+                                <!--<a class="list-group-item list-group-item-action <?php if($ID_post == get_the_ID()){ echo "list-group-item-secondary"; } ?>" target="_self" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>-->
+                                <a class="nav-link <?php if($ID_post == get_the_ID()){ echo "bg-primary text-white"; } else { echo "text-white-50"; } ?>" target="_self" href="<?php the_permalink(); ?>"><?php the_title(); ?></a> <?php
+
+                            }
+
+                        endwhile;
+
+                        wp_reset_postdata(); ?>
+
+                    </div>
+
+                </ul>
+
+            </nav>
+        
+        </div>
+
+        <div style="" id="oregoom-992-width-2" class="overflow-hidden min-vh-100">
+
+        <!--</div>
+
+    </div>-->
+
+    <!--<header class="sticky-lg-top">-->
+    <header>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
 
@@ -294,19 +412,4 @@
         </div>
     </nav>
 
-</header><?php
-
-if (!isset($_GET['v'])) {
-
-    /*GOOGLE ADSENSE (PC) en Header */
-    if(get_option('template_oregoom_adsense_728_90') != ''){ ?>
-
-        <div class="pt-3 pb-3 text-center d-none d-lg-block">
-
-            <?php  echo get_option('template_oregoom_adsense_728_90'); ?>
-
-        </div><?php 
-    
-    } 
-
-} ?>
+</header>

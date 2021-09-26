@@ -7,105 +7,170 @@ if(have_posts()){
     while(have_posts()) : the_post();
 
 
-        if (isset($_GET['v'])) {
+    if (isset($_GET['v'])) {
 
-            $ID_YouTube = $_GET['v']; ?>
+        $ID_YouTube = $_GET['v']; ?>
 
-            <div class="bg-dark d-none d-sm-block">
+        <div class="bg-dark d-none d-sm-block">
 
-                <div class="container pt-3 pb-4">
-                    <div class="row">
+            <div class="container pt-3 pb-4">
+                <div class="row">
 
-                        <div class="col">
-                            <amp-youtube
-                            data-videoid="<?php echo $ID_YouTube; ?>"
-                            layout="responsive"
-                            width="480"
-                            height="270"
-                            ></amp-youtube>
-                        </div>
-                        <div class="col col-3 d-none d-lg-block">
+                    <div class="col">
+                        <amp-youtube
+                        data-videoid="<?php echo $ID_YouTube; ?>"
+                        layout="responsive"
+                        width="480"
+                        height="270"
+                        ></amp-youtube>
+                    </div>
+                    <div class="col col-3 d-none d-lg-block">
 
-                            <!--//GOOGLE ADSENSE (PC) -->
-                            <?php if(get_option('template_oregoom_adsense_300_250') != ''){ ?>
-                                <div class="pb-3 text-center d-none d-xxl-block">
+                        <!--//GOOGLE ADSENSE (PC) -->
+                        <?php if(get_option('template_oregoom_adsense_300_250') != ''){ ?>
+                            <div class="pb-3 text-center d-none d-xxl-block">
 
-                                    <?php  echo get_option('template_oregoom_adsense_300_250'); ?>
+                                <?php  echo get_option('template_oregoom_adsense_300_250'); ?>
 
-                                </div>
-                            <?php } ?>
+                            </div>
+                        <?php } ?>
 
-                            <?php
+                        <?php
 
-                            $prev_post = get_previous_post();
+                        $prev_post = get_previous_post();
 
-                            if (!empty( $prev_post )):
+                        if (!empty( $prev_post )):
 
-                            if(get_post_meta($prev_post->ID , 'hb_idyoutube_post', true)){
+                        if(get_post_meta($prev_post->ID , 'hb_idyoutube_post', true)){
 
-                                $ID_YouTube_post = get_post_meta( $prev_post->ID , 'hb_idyoutube_post', true); ?>
+                            $ID_YouTube_post = get_post_meta( $prev_post->ID , 'hb_idyoutube_post', true); ?>
 
-                                <div class="d-grid gap-2 mx-auto mt-4">
-                                    <a href="<?php echo get_permalink( $prev_post->ID )."?v=$ID_YouTube_post"; ?>" class="btn btn-primary" type="button">Siguiente video</a>
-                                </div>
+                            <div class="d-grid gap-2 mx-auto mt-4">
+                                <a href="<?php echo get_permalink( $prev_post->ID )."?v=$ID_YouTube_post"; ?>" class="btn btn-primary" type="button">Siguiente video</a>
+                            </div>
 
-                            <?php } ?>
+                        <?php } ?>
 
-                            <?php endif; ?>
-
-                        </div>
+                        <?php endif; ?>
 
                     </div>
-                </div>
 
+                </div>
             </div>
 
-            <div class="bg-dark sticky-top d-sm-none" style="z-index: 1;">
-                <div class="container-lg container-fluid pl-lg-5 pr-lg-5 pt-lg-3 pb-lg-3 p-0">
-                    <amp-youtube
-                    data-videoid="<?php echo $ID_YouTube; ?>"
-                    layout="responsive"
-                    width="480"
-                    height="270"
-                    ></amp-youtube>
-                </div>
-            </div><?php
+        </div>
 
-        } else {
+        <div class="bg-dark sticky-top d-sm-none" style="z-index: 1;">
+            <div class="container-lg container-fluid pl-lg-5 pr-lg-5 pt-lg-3 pb-lg-3 p-0">
+                <amp-youtube
+                data-videoid="<?php echo $ID_YouTube; ?>"
+                layout="responsive"
+                width="480"
+                height="270"
+                ></amp-youtube>
+            </div>
+        </div><?php
 
-            /*GOOGLE ADSENSE (PC) en Header */
-            if(get_option('template_oregoom_adsense_728_90') != ''){ ?>
-
-                <div class="pt-3 pb-1 text-center d-none d-lg-block bg-light">
-
-                    <?php  echo get_option('template_oregoom_adsense_728_90'); ?>
-
-                </div><?php 
-            
-            } 
-
-        } ?>
+    } ?>
 
 
+<main class="container pt-4 mb-5">
 
-    <main class="container pt-4 mb-4">
+    <div class="row">
 
-        <div class="row">
+        <aside class="col col-xxl-2 col-xl-2 col-lg-3 d-none d-lg-block">
 
-            <article class="col-xxl-9">
+            <nav style="position: -webkit-sticky; position: sticky;  top: 80px; height: 100vh; max-height: calc(100vh - 105px);">
 
-                <h1 class="text-center h1 mb-4" style="font-weight: bold;"><?php the_title(); ?></h1>
+                <!--<div style="position: -webkit-sticky; position: sticky; top: 0; z-index: 12;" class="py-1 me-2 bg-warning bg-gradient text-center text-dark rounded-1">
+
+                    <span class="h5"><strong>Contenido</strong></span>
+
+                </div>-->
+
+                <style>
+
+                    #ul-scrollbar::-webkit-scrollbar{
+                        width: 6px;
+                        height: 6px;
+                    }
+                    #ul-scrollbar::-webkit-scrollbar-corner{
+                        background-color: transparent;
+                    }
+                    #ul-scrollbar::-webkit-scrollbar-thumb{
+                        border-radius: 3px;
+                        background-color: #91979d;
+                    }
+
+                </style>
+
+                <ul style="overflow: auto; max-height: 100%; margin: 0; padding: 0;" id="ul-scrollbar" class="pe-2">
+
+                    <div style="position: -webkit-sticky; position: sticky; top: 0; z-index: 12;" class="py-1 bg-warning bg-gradient text-center text-dark rounded-1">
+
+                        <span class="h5"><strong>Contenido</strong></span>
+
+                    </div>
+
+                    <!--<div class="list-group list-group-flush">-->
+                    <div class="nav flex-column pb-4">
+
+                        <?php
+
+                        $ID_post = get_the_ID();
+
+                        //Consulta que pertenece a una categoria específica
+                        $wordpress_query = new WP_Query( array(
+                                'post_type' => 'post',
+                                'orderby' => 'DESC',
+                                'post_status' => 'publish',
+                                'posts_per_page' => -1
+                            ));
+
+                        while ($wordpress_query->have_posts()) : $wordpress_query->the_post();
+
+                            // Título corto
+                            if(get_post_meta(get_the_ID(), 'oregoom_title_corto_post', true)){
+
+                                $oregoom_title_corto_post = get_post_meta(get_the_ID(), 'oregoom_title_corto_post', true); ?>
+
+                                <!--<a class="list-group-item list-group-item-action <?php if($ID_post == get_the_ID()){ echo "list-group-item-secondary"; } ?>" target="_self" href="<?php the_permalink(); ?>"><?php echo $oregoom_title_corto_post; ?></a>-->
+                                <a class="nav-link text-dark  <?php if($ID_post == get_the_ID()){ echo "list-group-item-primary"; } ?>" target="_self" href="<?php the_permalink(); ?>"><?php echo $oregoom_title_corto_post; ?></a> <?php
+
+                            } else { ?>
+
+                                <!--<a class="list-group-item list-group-item-action <?php if($ID_post == get_the_ID()){ echo "list-group-item-secondary"; } ?>" target="_self" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>-->
+                                <a class="nav-link text-dark <?php if($ID_post == get_the_ID()){ echo "list-group-item-primary"; } ?>" target="_self" href="<?php the_permalink(); ?>"><?php the_title(); ?></a> <?php
+
+                            }
+
+                        endwhile;
+
+                        wp_reset_postdata(); ?>
+
+                    </div>
+
+                </ul>
+
+            </nav>
+
+        </aside>
+
+        <article class="col-xl-8 col">
+
+            <div class="bg-white px-xl-5 px-lg-4 py-3 rounded-3">
+
+                <h1 class="text-center h1 mb-3" style="font-weight: bold;"><?php the_title(); ?></h1>
 
 
                 <!--//GOOGLE ADSENSE (Movil) -->
                 <?php if(get_option('template_oregoom_adsense_300_250') != ''){ ?>
-                    <div class="pb-3 text-center d-lg-none">
+                    <div class="pb-2 text-center d-lg-none">
 
                         <?php  echo get_option('template_oregoom_adsense_300_250'); ?>
 
                     </div>
                 <?php } ?>
-
 
 
                 <?php
@@ -114,93 +179,115 @@ if(have_posts()){
 
                     if(get_post_meta(get_the_ID(), 'hb_idyoutube_post', true)){
 
-                        $ID_YouTube_post = get_post_meta(get_the_ID(), 'hb_idyoutube_post', true); ?>
+                    $ID_YouTube_post = get_post_meta(get_the_ID(), 'hb_idyoutube_post', true); ?>
 
-                        <div class="d-grid gap-2 col-md-6 mx-auto mb-3">
+                    <div class="d-grid gap-2 col-md-6 mx-auto mt-4">
+                        <a href="<?php echo get_the_permalink()."?v=$ID_YouTube_post"; ?>" class="btn btn-primary rounded-pill">Ver video tutorial</a>
+                    </div>
 
-                            <a href="<?php echo get_the_permalink()."?v=$ID_YouTube_post"; ?>" class="btn btn-primary rounded-pill">Ver video tutorial</a>
+                    <?php } ?>
 
-                        </div><?php 
-                
-                    } 
+                <?php } ?>
 
-                } ?>
-
-
-
-                <div id="container-article" class="pt-lg-5 pb-4 bg-width rounded-3 px-xl-5 mx-xl-5 px-lg-5 mx-lg-4">
+                <div class="pt-4 pb-4">
 
                     <?php the_content(); ?>
 
                 </div>
 
-
-
-            </article>
-            
-
-            <aside class="col-xxl-3 d-none d-xxl-block">
-
-
-                <!--//Ads Curso de Udemy (PC y Movil) -->
-                <?php if(get_option('template_oregoom_curso_udemy') != ''){ ?>
-                    <div class="pb-3 text-center sticky-top"  style="position: -webkit-sticky; position: sticky; overflow: auto; top: 116px; height: 100vh; max-height: calc(100vh - 116px); z-index: 12;">
-
-                        <?php  echo get_option('template_oregoom_curso_udemy'); ?>
-
-                    </div>
-                <?php } ?>
-
-
-            </aside>
-
-        </div>
-
-    </main>
-
-
-
-    <div class="container mb-5 pb-lg-5">
-
-        <div class="row">
-
-
-            <div class="col d-none d-lg-block">
-
-                <!--//GOOGLE ADSENSE (PC) -->
-                <?php if(get_option('template_oregoom_adsense_300_250') != ''){ ?>
-                    <div class="pb-3 text-center">
-
-                        <?php  echo get_option('template_oregoom_adsense_300_250'); ?>
-
-                    </div>
-                <?php } ?>
-
             </div>
 
+        </article>
+
+        <div class="col col-xl-2 d-none d-xl-block">
+
+
+            <!--//Ads Curso de Udemy (PC y Movil) -->
+            <?php if(get_option('template_oregoom_curso_udemy') != ''){ ?>
+                <div class="pb-3 text-center sticky-top d-none"  style="position: -webkit-sticky; position: sticky; overflow: auto; top: 116px; height: 100vh; max-height: calc(100vh - 116px); z-index: 12;">
+
+                    <?php  echo get_option('template_oregoom_curso_udemy'); ?>
+
+                </div>
+            <?php } ?>
+
+            <!--//GOOGLE ADSENSE (PC) -->
+            <?php if(get_option('template_oregoom_adsense_160_600') != ''){ ?>
+                <div class="pb-3 text-end d-none d-lg-block">
+
+                    <?php  echo get_option('template_oregoom_adsense_160_600'); ?>
+
+                </div>
+            <?php } ?>
+
+
         </div>
 
-        <div class="row">
+    </div>
+
+</main>
 
 
-            <div class="col d-none d-lg-block"><?php
+<div class="container mt-4 mb-5">
 
-                /*GOOGLE ADSENSE (PC) en Header */
-                if(get_option('template_oregoom_adsense_728_90') != ''){ ?>
+    <div class="row">
 
-                    <div class="pt-3 pb-3 text-center d-none d-lg-block">
+        <div class="col">
 
-                        <?php  echo get_option('template_oregoom_adsense_728_90'); ?>
+            <!--//GOOGLE ADSENSE (PC) -->
+            <?php if(get_option('template_oregoom_adsense_auto') != ''){ ?>
+                <div class="text-center">
 
-                    </div><?php 
-                
-                }?>
+                    <?php  echo get_option('template_oregoom_adsense_auto'); ?>
 
-            </div>
+                </div>
+            <?php } ?>
 
         </div>
 
-    </div> <?php
+    </div>
+
+</div>
+
+
+
+
+<div class="container mt-4 mb-5">
+
+    <div class="row">
+
+        <div class="col">
+
+            <!--//GOOGLE ADSENSE (PC) -->
+            <?php if(get_option('template_oregoom_adsense_300_250') != ''){ ?>
+                <div class="pb-3 text-center">
+
+                    <?php  echo get_option('template_oregoom_adsense_300_250'); ?>
+
+                </div>
+            <?php } ?>
+
+        </div>
+
+        <div class="col d-none d-xxl-block">
+
+            <!--//GOOGLE ADSENSE (PC) -->
+            <?php if(get_option('template_oregoom_adsense_300_250') != ''){ ?>
+                <div class="pb-3 text-center">
+
+                    <?php  echo get_option('template_oregoom_adsense_300_250'); ?>
+
+                </div>
+            <?php } ?>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<?php
 
     endwhile;
 
