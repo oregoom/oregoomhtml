@@ -89,13 +89,7 @@ if(have_posts()){
 
         <aside class="col col-xxl-2 col-xl-2 col-lg-3 d-none d-lg-block">
 
-            <nav style="position: -webkit-sticky; position: sticky;  top: 80px; height: 100vh; max-height: calc(100vh - 105px);">
-
-                <!--<div style="position: -webkit-sticky; position: sticky; top: 0; z-index: 12;" class="py-1 me-2 bg-warning bg-gradient text-center text-dark rounded-1">
-
-                    <span class="h5"><strong>Contenido</strong></span>
-
-                </div>-->
+            <nav style="position: -webkit-sticky; position: sticky;  top: 116px; height: 100vh; max-height: calc(100vh - 116px);">
 
                 <style>
 
@@ -144,12 +138,12 @@ if(have_posts()){
                                 $oregoom_title_corto_post = get_post_meta(get_the_ID(), 'oregoom_title_corto_post', true); ?>
 
                                 <!--<a class="list-group-item list-group-item-action <?php if($ID_post == get_the_ID()){ echo "list-group-item-secondary"; } ?>" target="_self" href="<?php the_permalink(); ?>"><?php echo $oregoom_title_corto_post; ?></a>-->
-                                <a class="nav-link <?php if($ID_post == get_the_ID()){ echo "text-primary"; } else { echo "text-dark"; } ?>" target="_self" href="<?php the_permalink(); ?>"><?php echo $oregoom_title_corto_post; ?></a><?php
+                                <a class="nav-link ps-1 <?php if($ID_post == get_the_ID()){ echo "text-primary"; } else { echo "text-dark"; } ?>" target="_self" href="<?php the_permalink(); ?>"><?php echo $oregoom_title_corto_post; ?></a><?php
 
                             } else { ?>
 
                                 <!--<a class="list-group-item list-group-item-action <?php if($ID_post == get_the_ID()){ echo "list-group-item-secondary"; } ?>" target="_self" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>-->
-                                <a class="nav-link <?php if($ID_post == get_the_ID()){ echo "text-primary"; } else { echo "text-dark"; } ?>" target="_self" href="<?php the_permalink(); ?>"><?php the_title(); ?></a> <?php
+                                <a class="nav-link ps-1 <?php if($ID_post == get_the_ID()){ echo "text-primary"; } else { echo "text-dark"; } ?>" target="_self" href="<?php the_permalink(); ?>"><?php the_title(); ?></a> <?php
 
                             }
 
@@ -236,49 +230,6 @@ if(have_posts()){
 
 </main>
 
-
-<div class="container mt-4 mb-5">
-
-    <div class="row">
-
-        <div class="col">
-
-            <!--//GOOGLE ADSENSE (PC) -->
-            <?php if(get_option('template_oregoom_adsense_auto') != ''){ ?>
-                <div class="text-center d-none d-xxl-block">
-
-                    <?php  echo get_option('template_oregoom_adsense_auto'); ?>
-
-                </div>
-            <?php } ?>
-
-            <!--//GOOGLE ADSENSE (PC) -->
-            <?php if(get_option('template_oregoom_adsense_970_250') != ''){ ?>
-                <div class="text-center d-none d-xl-block d-xxl-none">
-
-                    <?php  echo get_option('template_oregoom_adsense_970_250'); ?>
-
-                </div>
-            <?php } ?>
-
-            <!--//GOOGLE ADSENSE (PC) -->
-            <?php if(get_option('template_oregoom_adsense_728_90') != ''){ ?>
-                <div class="text-center d-none d-lg-block d-xl-none">
-
-                    <?php  echo get_option('template_oregoom_adsense_728_90'); ?>
-
-                </div>
-            <?php } ?>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-
-
 <div class="container mt-4 mb-5">
 
     <div class="row">
@@ -287,7 +238,7 @@ if(have_posts()){
 
             <!--//GOOGLE ADSENSE (PC) -->
             <?php if(get_option('template_oregoom_adsense_300_250') != ''){ ?>
-                <div class="pb-3 text-center">
+                <div class="text-center">
 
                     <?php  echo get_option('template_oregoom_adsense_300_250'); ?>
 
@@ -300,7 +251,7 @@ if(have_posts()){
 
             <!--//GOOGLE ADSENSE (PC) -->
             <?php if(get_option('template_oregoom_adsense_300_250') != ''){ ?>
-                <div class="pb-3 text-center">
+                <div class="text-center">
 
                     <?php  echo get_option('template_oregoom_adsense_300_250'); ?>
 
@@ -312,6 +263,48 @@ if(have_posts()){
     </div>
 
 </div>
+
+
+
+<div class="container mt-4 mb-5">
+
+    <div class="row">
+
+        <div class="col">
+
+            <!--//GOOGLE ADSENSE (PC) -->
+            <?php if(get_option('template_oregoom_adsense_auto') != ''){ ?>
+                <div class="pb-3 text-center d-none d-xxl-block">
+
+                    <?php  echo get_option('template_oregoom_adsense_auto'); ?>
+
+                </div>
+            <?php } ?>
+
+            <!--//GOOGLE ADSENSE (PC) -->
+            <?php if(get_option('template_oregoom_adsense_970_250') != ''){ ?>
+                <div class="pb-3 text-center d-none d-xl-block d-xxl-none">
+
+                    <?php  echo get_option('template_oregoom_adsense_970_250'); ?>
+
+                </div>
+            <?php } ?>
+
+            <!--//GOOGLE ADSENSE (PC) -->
+            <?php if(get_option('template_oregoom_adsense_728_90') != ''){ ?>
+                <div class="pb-3 text-center d-none d-lg-block d-xl-none">
+
+                    <?php  echo get_option('template_oregoom_adsense_728_90'); ?>
+
+                </div>
+            <?php } ?>
+
+        </div>
+
+    </div>
+
+</div>
+
 
 
 <?php
