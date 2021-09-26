@@ -135,12 +135,12 @@ if(have_posts()){
                                 $oregoom_title_corto_post = get_post_meta(get_the_ID(), 'oregoom_title_corto_post', true); ?>
 
                                 <!--<a class="list-group-item list-group-item-action <?php if($ID_post == get_the_ID()){ echo "list-group-item-secondary"; } ?>" target="_self" href="<?php the_permalink(); ?>"><?php echo $oregoom_title_corto_post; ?></a>-->
-                                <a class="nav-link text-dark  <?php if($ID_post == get_the_ID()){ echo "list-group-item-primary"; } ?>" target="_self" href="<?php the_permalink(); ?>"><?php echo $oregoom_title_corto_post; ?></a> <?php
+                                <a class="nav-link <?php if($ID_post == get_the_ID()){ echo "text-primary"; } else { echo "text-dark"; } ?>" target="_self" href="<?php the_permalink(); ?>"><?php echo $oregoom_title_corto_post; ?></a><?php
 
                             } else { ?>
 
                                 <!--<a class="list-group-item list-group-item-action <?php if($ID_post == get_the_ID()){ echo "list-group-item-secondary"; } ?>" target="_self" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>-->
-                                <a class="nav-link text-dark <?php if($ID_post == get_the_ID()){ echo "list-group-item-primary"; } ?>" target="_self" href="<?php the_permalink(); ?>"><?php the_title(); ?></a> <?php
+                                <a class="nav-link <?php if($ID_post == get_the_ID()){ echo "text-primary"; } else { echo "text-dark"; } ?>" target="_self" href="<?php the_permalink(); ?>"><?php the_title(); ?></a> <?php
 
                             }
 
@@ -156,7 +156,7 @@ if(have_posts()){
 
         </aside>
 
-        <article class="col-xl-8 col">
+        <article class="col-xl-8 col-lg-9 col">
 
             <div class="bg-white px-xl-5 px-lg-4 py-3 rounded-3">
 
@@ -236,9 +236,27 @@ if(have_posts()){
 
             <!--//GOOGLE ADSENSE (PC) -->
             <?php if(get_option('template_oregoom_adsense_auto') != ''){ ?>
-                <div class="text-center">
+                <div class="text-center d-none d-xxl-block">
 
                     <?php  echo get_option('template_oregoom_adsense_auto'); ?>
+
+                </div>
+            <?php } ?>
+
+            <!--//GOOGLE ADSENSE (PC) -->
+            <?php if(get_option('template_oregoom_adsense_970_250') != ''){ ?>
+                <div class="text-center d-none d-xl-block d-xxl-none">
+
+                    <?php  echo get_option('template_oregoom_adsense_970_250'); ?>
+
+                </div>
+            <?php } ?>
+
+            <!--//GOOGLE ADSENSE (PC) -->
+            <?php if(get_option('template_oregoom_adsense_728_90') != ''){ ?>
+                <div class="text-center d-none d-lg-block d-xl-none">
+
+                    <?php  echo get_option('template_oregoom_adsense_728_90'); ?>
 
                 </div>
             <?php } ?>
@@ -269,7 +287,7 @@ if(have_posts()){
 
         </div>
 
-        <div class="col d-none d-xxl-block">
+        <div class="col d-none d-lg-block">
 
             <!--//GOOGLE ADSENSE (PC) -->
             <?php if(get_option('template_oregoom_adsense_300_250') != ''){ ?>
