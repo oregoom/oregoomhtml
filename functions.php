@@ -431,3 +431,15 @@ function hb_excerpt_100_caracteres($get_the_excerpt){
     echo '<p class="text-muted mb-2">'.$excerpt_post.'...</p>';
 
 }
+
+
+
+
+
+
+//include_once Post Type Cursos;
+include_once 'cursos/post-type-cursos.php';
+
+//include_once Meta Boxes Cursos;
+include_once 'cursos/metaboxes-cursos.php';
+
