@@ -28,20 +28,20 @@ if(have_posts()){
 
                         <!--//GOOGLE ADSENSE (PC) -->
                         <?php if(get_option('template_oregoom_adsense_300_250') != ''){ ?>
-                            <!--<div class="pb-3 text-center d-none d-xxl-block">
+                            <div class="pb-3 text-center d-none d-xl-block">
 
                                 <?php  echo get_option('template_oregoom_adsense_300_250'); ?>
 
-                            </div>-->
+                            </div>
                         <?php } ?>
 
                         <!--//Ads Curso de Udemy (PC y Movil) -->
                         <?php if(get_option('template_oregoom_curso_udemy') != ''){ ?>
-                            <div class="pb-3 text-center d-none d-lg-block">
+                            <!--<div class="pb-3 text-center d-none d-lg-block">
 
                                 <?php  echo get_option('template_oregoom_curso_udemy'); ?>
 
-                            </div>
+                            </div>-->
                         <?php } ?>
 
                         <?php
@@ -159,7 +159,7 @@ if(have_posts()){
 
         </aside>
 
-        <article class="col-xl-8 col-lg-9 col">
+        <article class="col-xxl-7 col-xl-8 col-lg-9 col">
 
             <div class="bg-white px-xl-5 px-lg-4 py-3 rounded-3">
 
@@ -202,12 +202,12 @@ if(have_posts()){
 
         </article>
 
-        <div class="col col-xl-2 d-none d-xl-block">
+        <div class="col col-xxl-3 col-xl-2 d-none d-xl-block">
 
 
             <!--//Ads Curso de Udemy (PC y Movil) -->
             <?php if(get_option('template_oregoom_curso_udemy') != ''){ ?>
-                <div class="pb-3 text-center sticky-top d-none"  style="position: -webkit-sticky; position: sticky; overflow: auto; top: 116px; height: 100vh; max-height: calc(100vh - 116px); z-index: 12;">
+                <div class="pb-3 text-center sticky-top d-none d-xxl-block"  style="position: -webkit-sticky; position: sticky; overflow: auto; top: 116px; height: 100vh; max-height: calc(100vh - 116px); z-index: 12;">
 
                     <?php  echo get_option('template_oregoom_curso_udemy'); ?>
 
@@ -216,7 +216,7 @@ if(have_posts()){
 
             <!--//GOOGLE ADSENSE (PC) -->
             <?php if(get_option('template_oregoom_adsense_160_600') != ''){ ?>
-                <div class="pb-3 text-end d-none d-lg-block">
+                <div class="pb-3 text-end d-none d-xl-block d-xxl-none">
 
                     <?php  echo get_option('template_oregoom_adsense_160_600'); ?>
 
