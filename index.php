@@ -125,7 +125,7 @@ if(have_posts()){
                         //Consulta que pertenece a una categoria específica
                         $wordpress_query = new WP_Query( array(
                                 'post_type' => 'post',
-                                'orderby' => 'DESC',
+                                'order' => 'ASC',
                                 'post_status' => 'publish',
                                 'posts_per_page' => -1
                             ));
