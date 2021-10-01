@@ -134,7 +134,7 @@
 
 
 </head>
-<body <?php body_class('bg-light'); ?>>
+<body <?php body_class(); ?>>
 
 
     <!--//GOOGLE ADSENSE Google AMP (Auto) -->
@@ -142,8 +142,20 @@
             <?php  echo get_option('template_oregoom_adsense_google_amp_auto'); ?>
     <?php } ?>
 
+    <?php
 
-    <header class="sticky-lg-top">
+    if ( is_page_template( 'templates/template-blog.php' ) ) { ?>
+
+        <header><?php
+
+    } else { ?>
+
+        <header class="sticky-lg-top"><?php
+
+    } ?>
+
+
+    <!--<header class="sticky-lg-top">-->
 
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
 
@@ -294,19 +306,4 @@
         </div>
     </nav>
 
-</header><?php
-
-if (!isset($_GET['v'])) {
-
-    /*GOOGLE ADSENSE (PC) en Header */
-    if(get_option('template_oregoom_adsense_728_90') != ''){ ?>
-
-        <div class="pt-3 text-center d-none d-lg-block">
-
-            <?php  echo get_option('template_oregoom_adsense_728_90'); ?>
-
-        </div><?php 
-    
-    } 
-
-} ?>
+</header>
