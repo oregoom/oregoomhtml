@@ -37,7 +37,7 @@ if(have_posts()){
 
     <div class="px-xxl-5">
 
-        <h1 class="text-center mx-xl-5 px-xl-5" style="font-family: 'Poppins', Sans-serif; font-weight: bold;">
+        <h1 class="text-center mx-xl-5 px-xl-5" style="font-family: Tahoma, Verdana, Segoe, sans-serif; font-weight: bold;">
 
         <?php the_title(); ?>
 
@@ -123,80 +123,81 @@ if(have_posts()){
     
 </main>
 
+<div class="pt-5 pb-5 bg-light">
+    <div class="container">
 
-<div class="container mt-5 mb-5">
+        <div class="row">
 
-    <div class="row">
+            <div class="col">
 
-        <div class="col">
+                <!--//GOOGLE ADSENSE (PC) -->
+                <?php if(get_option('template_oregoom_adsense_300_250') != ''){ ?>
+                    <div class="text-center">
 
-            <!--//GOOGLE ADSENSE (PC) -->
-            <?php if(get_option('template_oregoom_adsense_300_250') != ''){ ?>
-                <div class="text-center">
+                        <?php  echo get_option('template_oregoom_adsense_300_250'); ?>
 
-                    <?php  echo get_option('template_oregoom_adsense_300_250'); ?>
+                    </div>
+                <?php } ?>
 
-                </div>
-            <?php } ?>
+            </div>
 
-        </div>
+            <div class="col d-none d-lg-block">
 
-        <div class="col d-none d-lg-block">
+                <!--//GOOGLE ADSENSE (PC) -->
+                <?php if(get_option('template_oregoom_adsense_300_250') != ''){ ?>
+                    <div class="text-center">
 
-            <!--//GOOGLE ADSENSE (PC) -->
-            <?php if(get_option('template_oregoom_adsense_300_250') != ''){ ?>
-                <div class="text-center">
+                        <?php  echo get_option('template_oregoom_adsense_300_250'); ?>
 
-                    <?php  echo get_option('template_oregoom_adsense_300_250'); ?>
+                    </div>
+                <?php } ?>
 
-                </div>
-            <?php } ?>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-
-<div class="container mt-4 mb-5">
-
-    <div class="row">
-
-        <div class="col">
-
-            <!--//GOOGLE ADSENSE (PC) -->
-            <?php if(get_option('template_oregoom_adsense_auto') != ''){ ?>
-                <div class="pb-3 text-center d-none d-xxl-block">
-
-                    <?php  echo get_option('template_oregoom_adsense_auto'); ?>
-
-                </div>
-            <?php } ?>
-
-            <!--//GOOGLE ADSENSE (PC) -->
-            <?php if(get_option('template_oregoom_adsense_970_250') != ''){ ?>
-                <div class="pb-3 text-center d-none d-xl-block d-xxl-none">
-
-                    <?php  echo get_option('template_oregoom_adsense_970_250'); ?>
-
-                </div>
-            <?php } ?>
-
-            <!--//GOOGLE ADSENSE (PC) -->
-            <?php if(get_option('template_oregoom_adsense_728_90') != ''){ ?>
-                <div class="pb-3 text-center d-none d-lg-block d-xl-none">
-
-                    <?php  echo get_option('template_oregoom_adsense_728_90'); ?>
-
-                </div>
-            <?php } ?>
+            </div>
 
         </div>
 
     </div>
 
+
+
+    <div class="container mt-4 mb-5">
+
+        <div class="row">
+
+            <div class="col">
+
+                <!--//GOOGLE ADSENSE (PC) -->
+                <?php if(get_option('template_oregoom_adsense_auto') != ''){ ?>
+                    <div class="pb-3 text-center d-none d-xxl-block">
+
+                        <?php  echo get_option('template_oregoom_adsense_auto'); ?>
+
+                    </div>
+                <?php } ?>
+
+                <!--//GOOGLE ADSENSE (PC) -->
+                <?php if(get_option('template_oregoom_adsense_970_250') != ''){ ?>
+                    <div class="pb-3 text-center d-none d-xl-block d-xxl-none">
+
+                        <?php  echo get_option('template_oregoom_adsense_970_250'); ?>
+
+                    </div>
+                <?php } ?>
+
+                <!--//GOOGLE ADSENSE (PC) -->
+                <?php if(get_option('template_oregoom_adsense_728_90') != ''){ ?>
+                    <div class="pb-3 text-center d-none d-lg-block d-xl-none">
+
+                        <?php  echo get_option('template_oregoom_adsense_728_90'); ?>
+
+                    </div>
+                <?php } ?>
+
+            </div>
+
+        </div>
+
+    </div>
 </div>
 
 <?php
