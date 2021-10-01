@@ -90,7 +90,16 @@ if(have_posts()){
                     <div class="px-xxl-5 px-xl-4 pt-4 pb-4">
 
                         <?php the_content(); ?>  
-                        
+
+                        <h3 class="h3 text-center border-bottom">¡Adelante! Deja tu comentario</h3>
+                        <amp-facebook-comments
+                            width="486"
+                            height="657"
+                            layout="responsive"
+                            data-numposts="5"
+                            data-href="<?php the_permalink(); ?>"
+                            >
+                        </amp-facebook-comments>
                     </div> 
 
                 </div>
