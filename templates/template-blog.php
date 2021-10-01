@@ -94,9 +94,10 @@ if(have_posts()){
                         <h3 class="h3 text-center border-bottom">¡Adelante! Deja tu comentario</h3>
                         <amp-facebook-comments
                             width="486"
-                            height="657"
+                            height="10"
                             layout="responsive"
-                            data-numposts="5"
+                            data-numposts="10"
+                            data-order-by ="reverse_time"
                             data-href="<?php the_permalink(); ?>"
                             >
                         </amp-facebook-comments>
