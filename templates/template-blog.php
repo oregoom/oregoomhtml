@@ -92,7 +92,7 @@ if(have_posts()){
                         <?php the_content(); ?> 
 
                         <!-- COMPARTIR en Redes Sociales -->
-                        <div class="d-none mt-5 d-lg-block mb-5">
+                        <div class="d-none mt-5 pt-4 pb-3 d-lg-block mb-5">
                             <div class="pb-2 pt-3 d-flex align-items-center border-top border-bottom">
                                 
                                 <span class="me-2 h5"><strong><small>Comparte este artículo:</small></strong></span>
@@ -166,7 +166,7 @@ if(have_posts()){
 
 
 
-    <div class="container mt-5 mb-4">
+    <div class="container mt-4 mb-4">
 
         <div class="row">
 
