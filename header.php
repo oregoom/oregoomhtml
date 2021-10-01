@@ -34,8 +34,22 @@
             font-weight: bold !important;
         }
         h2{
-            line-height: 1.2em; font-family: Raleway, sans-serif; font-weight: 700!important; font-size: 30px!important; padding-bottom: 5px; padding-top: 10px;
+            line-height: 1.2em; font-family: Raleway, sans-serif; font-weight: 700!important; font-size: 38px!important; padding-bottom: 10px; padding-top: 30px;
         }
+
+        h3{
+            line-height: 1.2em; font-family: Raleway, sans-serif; font-weight: 700!important; font-size: 30px!important; padding-bottom: 10px; padding-top: 30px;
+        }
+
+        h4{
+            line-height: 1.2em; font-family: Raleway, sans-serif; font-weight: 700!important; font-size: 26px!important; padding-bottom: 10px; padding-top: 30px;
+        }
+        figure{
+            padding-bottom: 20px!important;
+        }
+
+
+
 
         #btn-sidebarclose{
             background-color: #000;
