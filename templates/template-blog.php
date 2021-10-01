@@ -89,7 +89,36 @@ if(have_posts()){
 
                     <div class="px-xxl-5 px-xl-4 pt-4 pb-4">
 
-                        <?php the_content(); ?>  
+                        <?php the_content(); ?> 
+
+                        <!-- COMPARTIR en Redes Sociales -->
+                        <div class="d-none mt-2 d-lg-block mb-4">
+                            <div class="pb-2 pt-3 d-flex align-items-center border-top border-bottom">
+                                
+                                <span class="me-2 h5"><strong><small>Comparte este artículo:</small></strong></span>
+
+                                <span class="me-1">
+                                    <amp-social-share class="rounded bg-primary" type="facebook" data-param-app_id="216472885737679" width="36" height="36"></amp-social-share>
+                                </span>
+
+                                <span class="me-1">
+                                    <amp-social-share class="rounded bg-primary" type="twitter" width="36" height="36"></amp-social-share>
+                                </span>
+
+                                <span class="me-1">
+                                    <amp-social-share class="rounded bg-primary" type="whatsapp" width="36" height="36"></amp-social-share>
+                                </span>
+
+                                <span class="me-1">
+                                    <amp-social-share class="rounded bg-primary"  aria-label="Share on LinkedIn"  type="linkedin"  width="36"  height="36"></amp-social-share>
+                                </span>
+
+                                <span class="me-1">
+                                    <amp-social-share class="rounded bg-primary"  aria-label="Share by email" type="email"  width="36" height="36"></amp-social-share>
+                                </span>
+
+                            </div>
+                        </div>
 
                         <h3 class="h3 text-center border-bottom">¡Adelante! Deja tu comentario</h3>
                         <amp-facebook-comments
