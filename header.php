@@ -154,6 +154,10 @@
 </head>
 <body <?php body_class(); ?>>
 
+    <!-- Google Tag Manager -->
+    <amp-analytics config="https://www.googletagmanager.com/amp.json?id=GTM-KXV2MR2&gtm.url=SOURCE_URL" data-credentials="include"></amp-analytics>
+
+
 
     <!--//GOOGLE ADSENSE Google AMP (Auto) -->
     <?php if(get_option('template_oregoom_adsense_google_amp_auto') != ''){ ?>
