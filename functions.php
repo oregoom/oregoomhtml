@@ -461,3 +461,21 @@ include_once 'cursos/post-type-cursos.php';
 //include_once Meta Boxes Cursos;
 include_once 'cursos/metaboxes-cursos.php';
 
+
+
+
+
+//include_once Barra de Progreso
+include_once 'inc/barras-de-progreso.php';
+
+
+
+
+//include_once Function Frontend Curso
+include_once 'function/function-frontend-curso.php';
+
+
+
+
+
+

@@ -7,6 +7,10 @@
 
     <style amp-custom>
 
+        #clase p{
+            color: #BBBDBC!important;
+        }
+
         .lightbox {
             /*background: rgba(0,0,0,.8);*/
             background: rgba(0,0,0,.9);
@@ -162,11 +166,27 @@
 
         <header><?php
 
-    } else { ?>
+    } else { 
+        
+        if ( is_page_template( 'templates/template-cursos.php' ) ) { ?>
 
-        <header class="sticky-lg-top"><?php
+            <header><?php
+            
+        } else { 
+            
+            if ( is_page_template( 'templates/template-divi.php' ) ) { ?>
 
-    } ?>
+                <header><?php
+                
+            } else { ?>
+
+                <header class="sticky-lg-top"><?php
+
+            }
+
+        }
+
+    }?>
 
 
     <!--<header class="sticky-lg-top">-->
@@ -186,12 +206,14 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <!--Boton de Contenido (Movil)-->
-            <div class="navbar-toggler rounded-circle p-3 mb-5 me-4 bg-white border-0" style="position: fixed; bottom: 0px; right: 0px; z-index: 1000; box-shadow: rgba(0, 0, 0, 0.50) 0px 5px 10px;" role="button" aria-label="open sidebar" on="tap:quote-lb" tabindex="0">
-                <span class="navbar-toggler-icon"></span>
-            </div>
+            <?php if (! is_page_template( 'templates/template-divi.php' ) ) { ?>
 
+                <!--Boton de Contenido (Movil)-->
+                <div class="navbar-toggler rounded-circle p-3 mb-5 me-4 bg-white border-0" style="position: fixed; bottom: 0px; right: 0px; z-index: 1000; box-shadow: rgba(0, 0, 0, 0.50) 0px 5px 10px;" role="button" aria-label="open sidebar" on="tap:quote-lb" tabindex="0">
+                    <span class="navbar-toggler-icon"></span>
+                </div>
 
+            <?php } ?>
 
             <div class="collapse navbar-collapse ms-3" id="navbarSupportedContent">
 
@@ -245,76 +267,83 @@
 
             </amp-sidebar>
 
-
-            <!--Contenidos en Movil-->
-            <amp-lightbox id="quote-lb" layout="nodisplay" class="bg-white" scrollable>
-
-                <!--Botón de Close Contenidos-->
-                <span class="rounded-circle me-4" id="btn-sidebarclose" on="tap:quote-lb.close" style="position: fixed; top: 12px; right: 0px; z-index: 1000; box-shadow: rgba(0, 0, 0, 0.50) 0px 0px 10px;">X</span>
+ 
+            <?php 
             
-                <div class="shadow-sm text-center pt-3 pb-3 mb-3 sticky-top bg-white" style="z-index: 1;">
-                    <span class="h5"><strong>Contenido</strong></span>
-                </div>
+            if (! is_page_template( 'templates/template-divi.php' ) ) { ?>
 
+                <!--Contenidos en Movil-->
+                <amp-lightbox id="quote-lb" layout="nodisplay" class="bg-white" scrollable>
 
-                <!--//Ads Curso de Udemy (PC y Movil) -->
-                <?php if(get_option('template_oregoom_curso_udemy') != ''){ ?>
-                    <div class="pb-3 text-center">
-
-                        <?php  echo get_option('template_oregoom_curso_udemy'); ?>
-
-                    </div>
-                <?php } ?>
-
-
-                <div class="container" style="z-index: 1;">
-
-                    <div class="list-group list-group-flush text-center me-4 ms-4 pb-5"><?php
-
-                            $ID_post = get_the_ID();
-
-                            //Consulta que pertenece a una categoria específica
-                            $wordpress_query = new WP_Query( array(
-                                    'post_type' => 'post',
-                                    'orderby' => 'DESC',
-                                    'post_status' => 'publish',
-                                    'posts_per_page' => -1
-                                ));
-
-                            while ($wordpress_query->have_posts()) : $wordpress_query->the_post();
-
-                                // Título corto
-                                if(get_post_meta(get_the_ID(), 'oregoom_title_corto_post', true)){
-
-                                    $oregoom_title_corto_post = get_post_meta(get_the_ID(), 'oregoom_title_corto_post', true); ?>
-
-                                    <a class="list-group-item <?php if($ID_post == get_the_ID()){ echo "list-group-item-primary"; } ?>" target="_self" href="<?php the_permalink(); ?>"><?php echo $oregoom_title_corto_post; ?></a> <?php
-
-                                } else { ?>
-
-                                    <a class="list-group-item <?php if($ID_post == get_the_ID()){ echo "list-group-item-primary"; } ?>" target="_self" href="<?php the_permalink(); ?>"><?php the_title(); ?></a> <?php
-
-                                }
-
-                            endwhile;
-
-                            wp_reset_postdata(); ?>
-
-                    </div>
-
-                </div>
-
-                <!--//GOOGLE ADSENSE (PC) -->
-                <?php if(get_option('template_oregoom_adsense_300_600') != ''){ ?>
-                    <div class="pb-3 text-center">
-
-                        <?php  echo get_option('template_oregoom_adsense_300_600'); ?>
-
-                    </div>
-                <?php } ?>
+                    <!--Botón de Close Contenidos-->
+                    <span class="rounded-circle me-4" id="btn-sidebarclose" on="tap:quote-lb.close" style="position: fixed; top: 12px; right: 0px; z-index: 1000; box-shadow: rgba(0, 0, 0, 0.50) 0px 0px 10px;">X</span>
                 
+                    <div class="shadow-sm text-center pt-3 pb-3 mb-3 sticky-top bg-white" style="z-index: 1;">
+                        <span class="h5"><strong>Contenido</strong></span>
+                    </div>
 
-            </amp-lightbox>
+
+                    <!--//Ads Curso de Udemy (PC y Movil) -->
+                    <?php if(get_option('template_oregoom_curso_udemy') != ''){ ?>
+                        <div class="pb-3 text-center">
+
+                            <?php  echo get_option('template_oregoom_curso_udemy'); ?>
+
+                        </div>
+                    <?php } ?>
+
+
+                    <div class="container" style="z-index: 1;">
+
+                        <div class="list-group list-group-flush text-center me-4 ms-4 pb-5"><?php
+
+                                $ID_post = get_the_ID();
+
+                                //Consulta que pertenece a una categoria específica
+                                $wordpress_query = new WP_Query( array(
+                                        'post_type' => 'post',
+                                        'orderby' => 'DESC',
+                                        'post_status' => 'publish',
+                                        'posts_per_page' => -1
+                                    ));
+
+                                while ($wordpress_query->have_posts()) : $wordpress_query->the_post();
+
+                                    // Título corto
+                                    if(get_post_meta(get_the_ID(), 'oregoom_title_corto_post', true)){
+
+                                        $oregoom_title_corto_post = get_post_meta(get_the_ID(), 'oregoom_title_corto_post', true); ?>
+
+                                        <a class="list-group-item <?php if($ID_post == get_the_ID()){ echo "list-group-item-primary"; } ?>" target="_self" href="<?php the_permalink(); ?>"><?php echo $oregoom_title_corto_post; ?></a> <?php
+
+                                    } else { ?>
+
+                                        <a class="list-group-item <?php if($ID_post == get_the_ID()){ echo "list-group-item-primary"; } ?>" target="_self" href="<?php the_permalink(); ?>"><?php the_title(); ?></a> <?php
+
+                                    }
+
+                                endwhile;
+
+                                wp_reset_postdata(); ?>
+
+                        </div>
+
+                    </div>
+
+                    <!--//GOOGLE ADSENSE (PC) -->
+                    <?php if(get_option('template_oregoom_adsense_300_600') != ''){ ?>
+                        <div class="pb-3 text-center">
+
+                            <?php  echo get_option('template_oregoom_adsense_300_600'); ?>
+
+                        </div>
+                    <?php } ?>
+                    
+
+                </amp-lightbox> <?php
+                
+            } ?>
+
 
 
         </div>

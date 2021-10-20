@@ -60,3 +60,21 @@ if ( ! function_exists('oregoom_course_post_type') ) {
     add_action( 'init', 'oregoom_course_post_type', 0 );
 
 }
+
+
+
+function namespace_share_category_with_pages() {
+    register_taxonomy_for_object_type( 'book', 'cursos' );
+}
+ 
+add_action( 'init', 'namespace_share_category_with_pages' );
+
+
+function wpdocs_codex_custom_init() {
+    $args = array(
+        'public' => true,
+        'label'  => __( 'Books', 'textdomain' ),
+    );
+    register_post_type( 'book', $args );
+}
+add_action( 'init', 'wpdocs_codex_custom_init' );
